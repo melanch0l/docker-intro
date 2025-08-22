@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    container_name: minnyi_demo1
+    networks:
+      - solar
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - solar:/usr/app
+    restart: unless-stopped
+
+networks:
+  solar:
+    driver: bridge
+
+volumes:
+  solar:
+    name: solar
