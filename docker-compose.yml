@@ -1,11 +1,11 @@
 services:
   app:
     build: .
-    container_name: minnyi_demo1
+    container_name: solar1
     networks:
       - solar
     ports:
-      - "3000:3000"
+      - "3001:3000"
     env_file:
       - .env
     volumes:
